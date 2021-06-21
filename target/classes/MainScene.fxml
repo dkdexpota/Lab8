@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.AnchorPane?>
+<VBox spacing="10" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER">
+    <HBox style="-fx-background-color: #dcdcdc;" spacing="30">
+        <padding>
+            <Insets top="10" bottom="10" left="10" right="10"/>
+        </padding>
+        <HBox spacing="10" style="-fx-max-width: 700; -fx-pref-width: 700; -fx-font-size: 12;" alignment="CENTER_LEFT">
+            <VBox spacing="10">
+                <ComboBox fx:id="filterBox"/>
+                <TextField fx:id="filterValue" promptText="Value"/>
+            </VBox>
+            <VBox spacing="10">
+                <Button fx:id="findButton" text="Поиск" onAction="#find"/>
+                <Label fx:id="countInfo"/>
+            </VBox>
+        </HBox>
+        <VBox style="-fx-max-width: 700; -fx-pref-width: 700;" alignment="CENTER_LEFT">
+            <Label fx:id="typeLabel" text="1"/>
+            <Label fx:id="timeLabel"/>
+            <Label fx:id="countLabel"/>
+        </VBox>
+        <HBox alignment="CENTER_RIGHT" style="-fx-max-width: 700; -fx-pref-width: 700;" spacing="10">
+            <ComboBox fx:id="languageBox" onAction="#translate"/>
+            <Label fx:id="username"
+                   style="-fx-background-color: #999999; -fx-text-fill: #ffffff; -fx-font-size: 30; -fx-padding: 10;"/>
+        </HBox>
+    </HBox>
+    <VBox spacing="20" alignment="TOP_CENTER">
+        <HBox spacing="20" alignment="TOP_CENTER">
+            <Label text="SpaceMarine Таблица" style="-fx-font-size: 30"/>
+            <Button fx:id="addButton" text="+" style="-fx-font-size: 20" onAction="#add"/>
+            <Button fx:id="refreshButton" text="⟳" style="-fx-font-size: 20" onAction="#refresh"/>
+            <Button fx:id="viewButton" text="👁" style="-fx-font-size: 20" onAction="#viewPane"/>
+        </HBox>
+        <HBox>
+            <TableView fx:id="tableView" fixedCellSize="0.0" prefHeight="763.0" prefWidth="1980" maxWidth="1980.0"
+                       tableMenuButtonVisible="true">
+                <columns>
+                    <TableColumn style="-fx-max-width: 50; -fx-pref-width: 40;" text="id" fx:id="idColumn"/>
+                    <TableColumn style="-fx-max-width: 500; -fx-pref-width: 120;" text="имя" fx:id="nameColumn"/>
+                    <TableColumn style="-fx-max-width: 500; -fx-pref-width: 120;" text="координата х"
+                                 fx:id="coordinates_xColumn"/>
+                    <TableColumn style="-fx-max-width: 500; -fx-pref-width: 120;" text="координата у"
+                                 fx:id="coordinates_yColumn"/>
+                    <TableColumn style="-fx-max-width: 500; -fx-pref-width: 300;" text="дата создания"
+                                 fx:id="creationDateColumn"/>
+                    <TableColumn style="-fx-max-width: 500; -fx-pref-width: 120;" text="здоровье" fx:id="healthColumn"/>
+                    <TableColumn style="-fx-max-width: 500; -fx-pref-width: 120;" text="достидения"
+                                 fx:id="achievementsColumn"/>
+                    <TableColumn style="-fx-max-width: 500; -fx-pref-width: 120;" text="категория"
+                                 fx:id="categoryColumn"/>
+                    <TableColumn style="-fx-max-width: 500; -fx-pref-width: 120;" text="тип оружия"
+                                 fx:id="weaponTypeColumn"/>
+                    <TableColumn style="-fx-max-width: 500; -fx-pref-width: 120;" text="название главы"
+                                 fx:id="chapter_nameColumn"/>
+                    <TableColumn style="-fx-max-width: 500; -fx-pref-width: 120;" text="кол-во челиков"
+                                 fx:id="chapter_marinesCountColumn"/>
+                </columns>
+            </TableView>
+        </HBox>
+    </VBox>
+</VBox>

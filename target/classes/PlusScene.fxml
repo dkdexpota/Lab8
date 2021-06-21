@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox spacing="10" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" alignment="CENTER">
+    <padding>
+        <Insets top="10" bottom="10" left="10" right="10"/>
+    </padding>
+    <HBox spacing="10" alignment="CENTER">
+        <VBox spacing="10">
+            <TextField fx:id="idValue" promptText="id"/>
+            <TextField fx:id="nameValue" promptText="name"/>
+            <TextField fx:id="coordinates_xValue" promptText="x"/>
+            <TextField fx:id="coordinates_yValue" promptText="y"/>
+            <TextField fx:id="healthValue" promptText="health"/>
+            <TextField fx:id="achievementsValue" promptText="achievements"/>
+            <ComboBox fx:id="categoryValue" promptText="category" maxWidth="300"/>
+            <ComboBox fx:id="weaponValue" promptText="weapon type" maxWidth="300"/>
+            <TextField fx:id="chapter_nameValue" promptText="chapter name"/>
+            <TextField fx:id="chapter_marinesCountValue" promptText="marines count"/>
+        </VBox>
+        <VBox spacing="10" style="-fx-font-size: 13">
+            <Button fx:id="addButton" text="add" maxWidth="150" onAction="#addEl"/>
+            <Button fx:id="addMinButton" text="add if min" maxWidth="150" onAction="#addIfMin"/>
+            <Button fx:id="rmGreaterButton" text="remove greater" maxWidth="150" onAction="#rmGreater"/>
+            <Button fx:id="updButton" text="update" maxWidth="150" onAction="#upd"/>
+            <Button fx:id="rmIdButton" text="remove by id" maxWidth="150" onAction="#rmId"/>
+        </VBox>
+    </HBox>
+    <Label fx:id="errLabel" visible="false" style="-fx-background-color: #aaaaaa; -fx-font-size: 13; -fx-padding: 10;"/>
+</VBox>

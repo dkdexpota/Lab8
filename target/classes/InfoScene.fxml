@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<ScrollPane>
+    <VBox spacing="10" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" alignment="CENTER">
+        <padding>
+            <Insets top="10" bottom="10" left="10" right="10"/>
+        </padding>
+        <HBox spacing="10" alignment="CENTER">
+            <VBox spacing="10" alignment="CENTER">
+                <Label text="id"/>
+                <TextField fx:id="idValue" disable="true" promptText="id"/>
+                <Label fx:id="nameValueU"/>
+                <TextField fx:id="nameValue" promptText="name"/>
+                <Label fx:id="coordinates_xValueU"/>
+                <TextField fx:id="coordinates_xValue" promptText="x"/>
+                <Label fx:id="coordinates_yValueU"/>
+                <TextField fx:id="coordinates_yValue" promptText="y"/>
+                <Label fx:id="healthValueU"/>
+                <TextField fx:id="healthValue" promptText="health"/>
+                <Label fx:id="achievementsValueU"/>
+                <TextField fx:id="achievementsValue" promptText="achievements"/>
+                <Label fx:id="categoryValueU"/>
+                <ComboBox fx:id="categoryValue" promptText="category" maxWidth="300"/>
+                <Label fx:id="weaponValueU"/>
+                <ComboBox fx:id="weaponValue" promptText="weapon type" maxWidth="300"/>
+                <Label fx:id="chapter_nameValueU"/>
+                <TextField fx:id="chapter_nameValue" promptText="chapter name"/>
+                <Label fx:id="chapter_marinesCountValueU"/>
+                <TextField fx:id="chapter_marinesCountValue" promptText="marines count"/>
+
+            </VBox>
+            <VBox spacing="10" style="-fx-font-size: 13">
+                <Button fx:id="updButton" text="update" maxWidth="150" onAction="#updateEl"/>
+                <Button fx:id="rmIdButton" text="remove" maxWidth="150" onAction="#rmEl"/>
+            </VBox>
+        </HBox>
+        <Label fx:id="errLabel" visible="false" style="-fx-background-color: #aaaaaa; -fx-font-size: 13; -fx-padding: 10;"/>
+    </VBox>
+</ScrollPane>
